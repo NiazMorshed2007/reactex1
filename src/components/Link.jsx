@@ -1,38 +1,21 @@
 import React, { useState } from "react";
 
 function Link() {
-  const [ac, setAc] = useState(false);
-  const [index, setIndex] = useState(0);
+  const [active, setActive] = useState(0);
 
-  function toggleAc(elem) {
-    elem === index ? setAc(true) : setAc(false);
-    console.log(elem);
-  }
-
-  function setIndexFunc(elem) {
-    setIndex(elem);
-  }
-
-  const spanArr = ["something", "anything", "thatThing", "thisThing"];
-
-  function Span({ title, index }) {
-    return (
-      <span
-        onClick={() => toggleAc(index)}
-        cngIndex={() => setIndexFunc(index)}
-        className={ac ? "nav-link active" : "nav-link"}
-      >
-        {title}
-      </span>
-    );
-  }
-
+  const arr = ["sdfj", "fjh", "sajhf", "ssagf"];
   return (
-    <>
-      {spanArr.map((e, i) => (
-        <Span title={e} index={i} />
+    <div>
+      {arr.map((e, i) => (
+        <p
+          className={active == i ? "active" : ""}
+          key={i}
+          onClick={() => setActive(i)}
+        >
+          {e}
+        </p>
       ))}
-    </>
+    </div>
   );
 }
 

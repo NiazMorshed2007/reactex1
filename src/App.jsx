@@ -17,6 +17,10 @@ function App() {
   const [curr, setCurr] = useState(1);
   const looping = useRef(false);
 
+  var slides = looping.current.childNodes;
+
+  console.log(slides);
+
   const next = () => {
     if (curr < img.length - 1) {
       setCurr(curr + 1);
