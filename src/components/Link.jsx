@@ -8,13 +8,14 @@ function Link() {
     <div>
       {arr.map((e, i) => (
         <p
-          className={active == i ? "active" : ""}
+          className={active === i ? "active" : ""}
           key={i}
           onClick={() => setActive(i)}
         >
           {e}
         </p>
       ))}
+      test
     </div>
   );
 }
